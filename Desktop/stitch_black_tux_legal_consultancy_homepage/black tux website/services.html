@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | Black Tux Consultancy Services</title>
+<meta content="Expert legal consultancy services including company registration, legal drafting, and tax compliance." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D4AF37",
+              secondary: "#1A1A1A",
+              "background-light": "#F9FAFB",
+              "background-dark": "#0A0A0A",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#D4AF37 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .service-card {
+            cursor: pointer;
+        }
+        .service-card.expanded {
+            grid-column: span 2;
+        }
+        @media (max-width: 768px) {
+            .service-card.expanded {
+                grid-column: span 1;
+            }
+        }
+    </style>
+<script>
+        function toggleCard(cardId) {
+            const card = document.getElementById(cardId);
+            const shortContent = card.querySelector('.short-content');
+            const expandedContent = card.querySelector('.expanded-content');
+            const learnMoreBtn = card.querySelector('.learn-more-btn');
+            
+            card.classList.toggle('expanded');
+            
+            if (card.classList.contains('expanded')) {
+                shortContent.style.display = 'none';
+                expandedContent.style.display = 'block';
+                learnMoreBtn.innerHTML = 'Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>';
+            } else {
+                shortContent.style.display = 'block';
+                expandedContent.style.display = 'none';
+                learnMoreBtn.innerHTML = 'Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>';
+            }
+        }
+        // Theme persistence
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+        // Initialize theme on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTheme);
+        } else {
+            initTheme();
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<a href="/black tux website/home.html" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Back to Home">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<img alt="Black Tux Consultancy Logo" class="h-12 w-12 rounded-full border-2 border-primary" src="/black tux website/images/logo.jpg"/>
+<div class="hidden sm:block">
+<span class="block font-display text-lg leading-none text-slate-900 dark:text-white">BLACK TUX</span>
+<span class="block text-[10px] tracking-widest text-primary font-bold uppercase">Legal Consultancy</span>
+</div>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/black tux website/home.html">Home</a>
+<a class="text-sm font-medium text-primary border-b-2 border-primary" href="/black tux website/services.html">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/black tux website/home.html">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/black tux website/inquiries.html">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick="toggleTheme()">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+<a class="hidden lg:flex items-center gap-2 bg-primary hover:bg-opacity-90 text-black px-5 py-2.5 rounded-full font-semibold text-sm transition-all" href="tel:+256759333172">
+<span class="material-symbols-outlined text-sm">call</span>
+                    Contact Us
+                </a>
+</div>
+</div>
+</div>
+</nav>
+<header class="relative overflow-hidden pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12 lg:pb-20">
+<div class="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+<h1 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6 text-slate-900 dark:text-white leading-snug">
+            Our Legal <span class="text-primary italic">Expertise</span>
+</h1>
+<p class="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tailored legal solutions for businesses, NGOs, and individuals. We combine professional rigor with strategic insight to protect your interests.
+        </p>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 auto-rows-max">
+<div id="card-1" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 sm:p-6 md:p-8 rounded-lg sm:rounded-2xl hover:shadow-lg sm:hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-4 sm:mb-6 w-12 sm:w-14 h-12 sm:h-14 bg-primary/10 dark:bg-primary/5 rounded-lg sm:rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl sm:text-3xl">corporate_fare</span>
+</div>
+<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 dark:text-white">Company Registration</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-4 sm:mb-6 flex-grow text-xs sm:text-sm leading-relaxed">
+                Hassle-free registration for private limited companies, NGOs, and Joint Venture Corporations (JVCs). We handle all the paperwork and compliance.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-1')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Comprehensive Company Registration Services:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Private Limited Company registration</li>
+<li>Non-Profit Organization (NPO) registration</li>
+<li>Joint Venture Corporation (JVC) setup</li>
+<li>Business Name registration</li>
+<li>Certificate of Incorporation processing</li>
+<li>Tax Identification Number (TIN) application</li>
+<li>Complete compliance documentation</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                We streamline the entire registration process, ensuring your company is properly established and compliant with all Ugandan regulations from day one.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-1')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-2" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Legal Drafting</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Expert drafting of contracts, intellectual property agreements, deeds, and legal notices to ensure your business remains legally robust.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-2')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Professional Legal Document Drafting:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Commercial contracts and agreements</li>
+<li>Employment agreements</li>
+<li>Intellectual property licenses</li>
+<li>Partnership and shareholder agreements</li>
+<li>Real estate deeds and conveyances</li>
+<li>Legal notices and demand letters</li>
+<li>Wills and testamentary documents</li>
+<li>NDA and confidentiality agreements</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                Our team of experienced legal professionals ensures every document is tailored to your specific needs and fully compliant with applicable laws.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-2')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-3" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Foreign Investment</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Guidance for international investors on local regulations, investment licensing, capital repatriation, and cross-border legal frameworks.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-3')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Expert Foreign Investment Advisory:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Investment licensing and permits</li>
+<li>Regulatory compliance for foreign investors</li>
+<li>Capital repatriation procedures</li>
+<li>Currency and exchange regulations</li>
+<li>Investment agreements and negotiations</li>
+<li>Tax treaty analysis</li>
+<li>Cross-border transaction structuring</li>
+<li>Joint venture arrangements</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                We navigate the complexities of Uganda's investment landscape, ensuring smooth market entry and optimal legal positioning for international investors.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-3')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-4" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Tax &amp; Compliance</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Annual returns filing, tax audits, and ongoing compliance support to help you navigate complex regulatory environments.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-4')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Comprehensive Tax &amp; Regulatory Compliance:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Annual tax returns preparation and filing</li>
+<li>Corporate income tax compliance</li>
+<li>VAT registration and returns</li>
+<li>Tax audit representation</li>
+<li>Monthly payroll and PAYE processing</li>
+<li>Statutory compliance calendars</li>
+<li>Transfer pricing documentation</li>
+<li>Tax risk mitigation strategies</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                Our experts keep your business compliant with Uganda Revenue Authority regulations while optimizing your tax position legally.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-4')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-5" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">gavel</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Dispute Resolution</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Professional guidance for mediation and resolution of commercial and civil disputes through strategic legal advice.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-5')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Strategic Dispute Resolution Services:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Commercial dispute mediation</li>
+<li>Arbitration proceedings</li>
+<li>Contract dispute resolution</li>
+<li>Employment disputes</li>
+<li>Debt recovery services</li>
+<li>Litigation strategy and representation</li>
+<li>Settlement negotiations</li>
+<li>Post-dispute compliance</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                We employ both alternative dispute resolution methods and litigation when necessary, always seeking cost-effective resolutions while protecting your interests.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-5')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-6" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">landscape</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Land Transactions</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Specialized legal support for land sale agreements, boundary disputes, leasehold negotiations, and land registry processing.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-6')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Comprehensive Land Transaction Services:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Land sale and purchase agreements</li>
+<li>Lease agreements and negotiations</li>
+<li>Boundary dispute resolution</li>
+<li>Land registry searches and applications</li>
+<li>Title verification and due diligence</li>
+<li>Land subdivision and consolidation</li>
+<li>Customary land documentation</li>
+<li>Real estate conveyancing</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                Our real estate specialists handle all aspects of land transactions, protecting your rights from initial negotiation through final registration.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-6')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-7" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">domain</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">Property Law</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Comprehensive legal services for property acquisitions, title transfers, and land registry matters across the region.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-7')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Full-Service Property Law Solutions:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>Property acquisition and sales</li>
+<li>Title verification and insurance</li>
+<li>Mortgage and security documentation</li>
+<li>Landlord-tenant disputes</li>
+<li>Property management legal issues</li>
+<li>Inheritance and succession planning</li>
+<li>Commercial property leasing</li>
+<li>Building code compliance</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                We provide end-to-end property law services, ensuring your investments are protected and all transactions are legally sound.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-7')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+<div id="card-8" class="service-card group bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-8 rounded-2xl hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="mb-6 w-14 h-14 bg-primary/10 dark:bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">group_work</span>
+</div>
+<h3 class="text-xl font-bold mb-3 dark:text-white">NGO Setup</h3>
+<div class="short-content">
+<p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                Specialized legal frameworks for non-profit organizations, including constitution drafting and regulatory filings.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-8')">
+                Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="expanded-content hidden">
+<p class="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                <strong>Complete NGO &amp; Non-Profit Setup Services:</strong>
+            </p>
+<ul class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 space-y-2 list-disc list-inside">
+<li>NGO registration and licensing</li>
+<li>Constitution and by-laws drafting</li>
+<li>Board governance documentation</li>
+<li>Regulatory compliance filings</li>
+<li>Tax exemption applications</li>
+<li>Donor compliance requirements</li>
+<li>Financial reporting procedures</li>
+<li>Risk management and liability protection</li>
+</ul>
+<p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                We guide non-profit organizations through establishment and ongoing compliance, ensuring they operate effectively while meeting all legal obligations.
+            </p>
+<button class="learn-more-btn inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" onclick="toggleCard('card-8')">
+                Show Less <span class="material-symbols-outlined text-sm">arrow_upward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<section class="bg-secondary dark:bg-zinc-950 py-16 relative overflow-hidden">
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<img alt="Overlay Logo" class="w-96 grayscale invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtySerbp_M6HctJxxBR0EIj_w3ozTf6Lx8U52bOAok1zYxQpx7Y_dCl0pW-V3ZE3u0VP6GmjzWIRtl-GyDTi_D4ZEqypHFsjRREUlVjTgEBjo1_uc9xjHBVewWsozquadlydZYBB9CHrh6hBDcADGi9Stec3haf-pBKbyrH2zxWnt0GjH-gq7J6df8w4BUnyymQz_9vFKo3T3ej_QFiYIxBKpsByLoakSIGZd2P_11s2xKLqhnfJvo2qWLiEC_JYz9aYdXQCT93lM"/>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div>
+<h2 class="font-display text-3xl text-white mb-2">Ready to secure your interests?</h2>
+<p class="text-slate-400 text-lg">Speak with our expert consultants today for a resolution.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<a class="bg-primary hover:bg-opacity-90 text-black px-8 py-4 rounded-full font-bold text-center transition-all flex items-center justify-center gap-2" href="tel:+256759333172">
+<span class="material-symbols-outlined">call</span>
+                    Call +256 759 333 172
+                </a>
+<a class="border border-primary text-primary hover:bg-primary hover:text-black px-8 py-4 rounded-full font-bold text-center transition-all" href="#">
+                    Request a Quote
+                </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-black border-t border-slate-200 dark:border-zinc-800 pt-12 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<img alt="Black Tux Logo" class="h-16 mb-6 rounded-full border border-primary" src="/black tux website/images/logo.jpg"/>
+<h3 class="font-display text-xl mb-4 text-slate-900 dark:text-white">Black Tux Businesses &amp; Legal Consultancy</h3>
+<p class="text-slate-600 dark:text-slate-400 max-w-sm mb-6">
+                    Providing premier legal advisory services since inception. Trust our guidance for every resolution.
+                </p>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Office</h4>
+<address class="not-italic text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    109, Kaguta Close Muyenga<br/>
+                    Kampala, Uganda
+                </address>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Digital</h4>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-2">
+<a class="hover:text-primary transition-colors" href="mailto:info@blacktuxconsultancy.com">info@blacktuxconsultancy.com</a>
+</p>
+<p class="text-slate-600 dark:text-slate-400 text-sm">
+<a class="hover:text-primary transition-colors" href="https://blacktuxconsultancyservices.com">blacktuxconsultancyservices.com</a>
+</p>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 Black Tux Consultancy. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<a class="fixed bottom-6 right-6 md:hidden w-14 h-14 bg-primary text-black rounded-full flex items-center justify-center shadow-2xl z-[60] animate-bounce" href="/black tux website/home.html" title="Back to Home">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+
+</body></html>
