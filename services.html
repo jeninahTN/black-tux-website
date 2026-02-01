@@ -87,6 +87,27 @@
         } else {
             initTheme();
         }
+        // Auto-expand card based on URL hash
+        function autoExpandCard() {
+            const hash = window.location.hash.substring(1); // Remove the # symbol
+            if (hash) {
+                const targetCard = document.getElementById(hash);
+                if (targetCard && !targetCard.classList.contains('expanded')) {
+                    // Small delay to ensure DOM is fully rendered
+                    setTimeout(() => {
+                        toggleCard(hash);
+                        // Scroll to the card smoothly
+                        targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        }
+        // Initialize auto-expand when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', autoExpandCard);
+        } else {
+            autoExpandCard();
+        }
     </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
